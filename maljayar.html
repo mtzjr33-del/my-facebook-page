@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Program for Educational and Medical Renaissance – Benghazi Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #4a90e2;
+            --accent-color: #63a4ff;
+            --light-color: #f0f7ff;
+            --text-dark: #2c3e50;
+            --text-light: #5d6d7e;
+            --border-color: #e3eaf2;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: #f9fbfd;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .meta-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+        }
+        
+        .meta-item strong {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: var(--text-dark);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            margin: 25px 0 10px;
+            color: var(--text-light);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .chapter {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .chapter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-box {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            font-size: 0.95rem;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        table tr {
+            transition: var(--transition);
+        }
+        
+        table tr:hover {
+            background-color: var(--light-color);
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        table tr:nth-child(even):hover {
+            background-color: var(--light-color);
+        }
+        
+        .scrollable-table {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .comparison-table {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .comparison-table th:first-child {
+            border-radius: var(--radius) 0 0 0;
+        }
+        
+        .comparison-table th:last-child {
+            border-radius: 0 var(--radius) 0 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+        
+        .badge-success {
+            background-color: rgba(39, 174, 96, 0.15);
+            color: var(--success-color);
+        }
+        
+        .badge-warning {
+            background-color: rgba(243, 156, 18, 0.15);
+            color: var(--warning-color);
+        }
+        
+        .badge-danger {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: var(--danger-color);
+        }
+        
+        .badge-info {
+            background-color: rgba(74, 144, 226, 0.15);
+            color: var(--secondary-color);
+        }
+        
+        .footnote {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .key-points {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .key-points li:before {
+            content: "✓";
+            position: absolute;
+            left: -20px;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .org-structure {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .org-node {
+            margin: 15px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .org-node:before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0f7ff, #e3eaf2);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .conclusion-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .flex-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .flex-stats .stat-item {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .chapter {
+                padding: 20px;
+            }
+            
+            .meta-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .flex-stats {
+                flex-direction: column;
+            }
+            
+            .flex-stats .stat-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>National Program for Educational and Medical Renaissance – Benghazi Project for Academic and Health Excellence 2026-2031</h1>
+                <p class="subtitle">A Sovereign Strategic Document for Immediate Implementation</p>
+                
+                <div class="meta-info">
+                    <div class="meta-item"><strong>Author:</strong> Mutaz Aljayar</div>
+                    <div class="meta-item"><strong>Date of Issue:</strong> November 2025</div>
+                    <div class="meta-item"><strong>Document Status:</strong> Ready for Immediate Approval and Implementation</div>
+                    <div class="meta-item"><strong>Pages (Core):</strong> 85 Pages</div>
+                    <div class="meta-item"><strong>Appendices:</strong> 18 Detailed Appendices (1200+ Pages)</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Chapter 1 -->
+        <div class="chapter" id="chapter1">
+            <h2>Chapter 1: Executive Summary – Stopping the Strategic Bleeding</h2>
+            
+            <div class="highlight-box">
+                <h3>1.1 The Shocking Reality: Strategic Bleeding Threatening National Sovereignty</h3>
+                <p>Libya faces an existential crisis in the higher education and healthcare sectors that has transcended the phase of service dysfunction to become a "multi-dimensional strategic bleeding" draining the country's financial and human resources at an alarming rate.</p>
+            </div>
+            
+            <h4>Table 1.1: Confirmed Annual Losses (2025 Data)</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Bleeding Type</th>
+                            <th>Details</th>
+                            <th>Annual Cost (Million USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Financial Bleeding</td>
+                            <td>Treatment abroad</td>
+                            <td><span class="badge badge-danger">180</span></td>
+                        </tr>
+                        <tr>
+                            <td>Human Bleeding</td>
+                            <td>Skills emigration (500 skills/year)</td>
+                            <td><span class="badge badge-warning">50</span></td>
+                        </tr>
+                        <tr>
+                            <td>Educational Bleeding</td>
+                            <td>Unproductive spending on missions and traditional systems</td>
+                            <td><span class="badge badge-danger">650</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Annual Total</strong></td>
+                            <td><strong>Direct and confirmed losses</strong></td>
+                            <td><span class="badge badge-danger"><strong>880</strong></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h4>Time Equation for Losses:</h4>
+            <ul class="key-points">
+                <li>Each day of delay = <strong>2.41 million USD</strong> direct loss</li>
+                <li>Each month of delay = <strong>72.3 million USD</strong> ongoing bleeding</li>
+                <li>Each lost year = <strong>880 million USD</strong> + <strong>500 emigrated minds</strong></li>
+            </ul>
+            
+            <h3>1.2 The Core of the Solution: Gradual Twinning Model through the "Qualified Heir"</h3>
+            <p>The program relies on the "Gradual Twinning through Qualified Heir Institutions" model as a strategic solution that combines:</p>
+            
+            <ul class="key-points">
+                <li><strong>Realism:</strong> Starting with Arab partners who have previously twinned with Western universities for more than 10 years</li>
+                <li><strong>Efficiency:</strong> Transferring a comprehensive package (management – curricula – quality – work culture)</li>
+                <li><strong>Gradualness:</strong> Measured transition toward direct global partnerships after building local capacities</li>
+                <li><strong>Sustainability:</strong> Mandatory national replacement program contractually binding</li>
+            </ul>
+            
+            <h3>1.3 The Crucial Economic Equation (Comparing the Two Scenarios)</h3>
+            
+            <h4>Table 1.2: Comparing the Two Investment Scenarios</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>With Program Implementation</th>
+                            <th>Without Program Implementation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Required Investment</td>
+                            <td><span class="badge badge-success">2.1 billion USD over 10 years</span></td>
+                            <td><span class="badge badge-info">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>Expected Losses</td>
+                            <td><span class="badge badge-success">Bleeding stops after 3 years</span></td>
+                            <td><span class="badge badge-danger">4.84 billion USD over 5.5 years</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sovereignty</td>
+                            <td><span class="badge badge-success">Independent national system</span></td>
+                            <td><span class="badge badge-warning">Permanent external dependency</span></td>
+                        </tr>
+                        <tr>
+                            <td>Human Capital</td>
+                            <td><span class="badge badge-success">Recovering and localizing skills</span></td>
+                            <td><span class="badge badge-danger">Continued brain drain</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Conclusion:</strong> Every dollar invested in this program achieves multiplied economic, social, and sovereign returns, establishing a sustainable system that does not depend on the external.</p>
+            </div>
+        </div>
+        
+        <!-- Chapter 2 -->
+        <div class="chapter" id="chapter2">
+            <h2>Chapter 2: Diagnosing the National Bleeding</h2>
+            
+            <h3>2.1 Treatment Abroad: Direct Financial Bleeding</h3>
+            <ul class="key-points">
+                <li>Average annual cases: <strong>12,000–15,000 cases</strong></li>
+                <li>Average case cost: <strong>20,000–35,000 USD</strong></li>
+                <li>Annual total: <strong>300–450 million USD</strong></li>
+            </ul>
+            
+            <h3>2.2 Sending Students Abroad: Double Loss</h3>
+            <ul class="key-points">
+                <li>Average annual spending: <strong>180–220 million USD</strong></li>
+                <li>Non-return rate: <strong>25–35%</strong></li>
+            </ul>
+            
+            <h3>2.3 Emigration of Medical and Academic Skills</h3>
+            <ul class="key-points">
+                <li>More than <strong>30%</strong> of specialist doctors left during the last ten years</li>
+                <li>Cost of reproducing one specialist doctor: <strong>250,000–300,000 USD</strong></li>
+            </ul>
+            
+            <h3>2.4 Diagnostic Conclusion</h3>
+            <div class="highlight-box">
+                <p>The crisis is not just a funding crisis, but a crisis of system, operation, and governance. Any solution that relies solely on purchasing devices or additional sending without changing the operating system will reproduce failure.</p>
+            </div>
+        </div>
+        
+        <!-- Chapter 3 -->
+        <div class="chapter" id="chapter3">
+            <h2>Chapter 3: Solution Philosophy – Gradual Twinning through the Qualified Heir</h2>
+            
+            <h3>3.1 The Core Idea</h3>
+            <p>Instead of risking complex negotiations with Western universities, we rely on a smart model based on:</p>
+            
+            <div class="highlight-box">
+                <ul class="key-points">
+                    <li>Selecting Arab partners "qualified heirs" who have previously twinned with Western universities for 10+ years</li>
+                    <li>Transferring the complete package: leadership – management – quality – curricula – work systems</li>
+                    <li>Using them as a temporary bridge (5–7 years) then upgrading to the original Western partner</li>
+                </ul>
+            </div>
+            
+            <h3>3.2 Strategic Advantages of the Model</h3>
+            
+            <h4>Table 3.1: Comprehensive Comparison between Full Twinning and Traditional Partnerships</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Full Twinning (Franchising)</th>
+                            <th>Traditional Partnerships</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Institutional Culture Transfer</td>
+                            <td>Complete transfer of system and institutional identity</td>
+                            <td>Limited knowledge exchange in selected areas</td>
+                        </tr>
+                        <tr>
+                            <td>Transformation Time</td>
+                            <td><span class="badge badge-success">3–5 years</span> (radical transformation)</td>
+                            <td><span class="badge badge-warning">8–12 years</span> (gradual transformation)</td>
+                        </tr>
+                        <tr>
+                            <td>Quality Guarantee</td>
+                            <td>Guaranteed through the global partner system</td>
+                            <td>Limited to agreement scope</td>
+                        </tr>
+                        <tr>
+                            <td>International Recognition</td>
+                            <td>Immediate through dual certification</td>
+                            <td>Gradual through limited partnerships</td>
+                        </tr>
+                        <tr>
+                            <td>Global Success Rate</td>
+                            <td><span class="badge badge-success">85%</span> (tested models)</td>
+                            <td><span class="badge badge-warning">45%</span> (with varying successes)</td>
+                        </tr>
+                        <tr>
+                            <td>Sustainability</td>
+                            <td><span class="badge badge-success">Very high</span> (with national replacement)</td>
+                            <td><span class="badge badge-warning">Medium</span> (depends on partnership continuity)</td>
+                        </tr>
+                        <tr>
+                            <td>Relative Cost</td>
+                            <td><span class="badge badge-success">35–45% less</span> than direct Western twinning</td>
+                            <td>Variable and uncertain costs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>3.3 Multi-dimensional Gains of Full Twinning</h3>
+            <ul class="key-points">
+                <li>Transfer of integrated system not individual experiences</li>
+                <li><strong>35–45% lower cost</strong> than direct Western twinning</li>
+                <li>Higher execution speed due to cultural and linguistic proximity</li>
+                <li>Ease of gradual national replacement</li>
+                <li>Higher legislative and contractual flexibility</li>
+                <li>Operational quality guarantee tested in similar Arab environments</li>
+            </ul>
+        </div>
+        
+        <!-- Chapter 4 -->
+        <div class="chapter" id="chapter4">
+            <h2>Chapter 4: Target Institutions and Priority Specializations</h2>
+            
+            <h3>4.1 Educational and Medical Institutions in Benghazi</h3>
+            <ul class="key-points">
+                <li>Qaryounes University</li>
+                <li>Arab Medical University</li>
+                <li>University Hospital (1200 beds)</li>
+                <li>Children's Hospital</li>
+                <li>Al-Jalaa Hospital</li>
+                <li>Cancer Hospital</li>
+                <li>Eye Hospital</li>
+            </ul>
+            
+            <h3>4.2 Arab Partners "Qualified Heirs" – The Golden List</h3>
+            
+            <h4>Table 4.1: Qaryounes University Partners – Developed Model</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Specialization</th>
+                            <th>Arab "Heir" Institution</th>
+                            <th>Original Western Partner</th>
+                            <th>Twinning Years</th>
+                            <th>Advantage for Us</th>
+                            <th>Budget (5 Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Petroleum Engineering</td>
+                            <td>King Abdullah University (KAUST)</td>
+                            <td>MIT + Stanford + Imperial College</td>
+                            <td>15+ years</td>
+                            <td>Pure American/British research system, global research centers</td>
+                            <td><span class="badge badge-info">110 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Computer Science</td>
+                            <td>Khalifa University (UAE)</td>
+                            <td>Georgia Tech + MIT</td>
+                            <td>10+ years</td>
+                            <td>American curriculum, global industrial partnerships</td>
+                            <td><span class="badge badge-info">85 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Artificial Intelligence</td>
+                            <td>King Abdullah University (KAUST)</td>
+                            <td>MIT + Stanford</td>
+                            <td>15+ years</td>
+                            <td>Research centers with MIT specifications, exclusive English</td>
+                            <td><span class="badge badge-info">95 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Electrical Engineering</td>
+                            <td>University of Sharjah</td>
+                            <td>Cambridge University</td>
+                            <td>18 years</td>
+                            <td>Full British accreditation, research partnerships with Cambridge</td>
+                            <td><span class="badge badge-info">75 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Civil Engineering</td>
+                            <td>Qatar University</td>
+                            <td>Texas Austin + Delft Universities</td>
+                            <td>15+ years</td>
+                            <td>ABET-accredited engineering programs</td>
+                            <td><span class="badge badge-info">70 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Chemistry and Pharmacy</td>
+                            <td>Cairo University</td>
+                            <td>UC San Francisco</td>
+                            <td>40+ years</td>
+                            <td>American clinical pharmacy curriculum</td>
+                            <td><span class="badge badge-info">55 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Physics and Mathematics</td>
+                            <td>King Abdullah University (KAUST)</td>
+                            <td>MIT + Caltech</td>
+                            <td>15+ years</td>
+                            <td>Pure American research system</td>
+                            <td><span class="badge badge-info">65 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Psychology</td>
+                            <td>American University of Beirut</td>
+                            <td>Integrated American system</td>
+                            <td>150+ years</td>
+                            <td>Faculty 80% PhD from American universities</td>
+                            <td><span class="badge badge-info">60 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dentistry</td>
+                            <td>Cairo University</td>
+                            <td>Integrated American system</td>
+                            <td>40+ years</td>
+                            <td>American dentistry curriculum</td>
+                            <td><span class="badge badge-info">58 million USD</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="footnote">Note: The above tables represent only a sample of the comprehensive data. The complete study includes detailed tables for all institutions.</div>
+        </div>
+        
+        <!-- Chapter 5 -->
+        <div class="chapter" id="chapter5">
+            <h2>Chapter 5: Phased Implementation Plan (2026-2035)</h2>
+            
+            <h3>5.1 Overview of Phases</h3>
+            
+            <h4>Table 5.1: Total Timeline</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Duration</th>
+                            <th>Budget</th>
+                            <th>Key Outputs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Foundation Phase</td>
+                            <td>2026-2028 (3 years)</td>
+                            <td><span class="badge badge-info">350 million USD</span></td>
+                            <td>System establishment, twinning with 5 Arab partners</td>
+                        </tr>
+                        <tr>
+                            <td>Expansion Phase</td>
+                            <td>2029-2031 (3 years)</td>
+                            <td><span class="badge badge-info">450 million USD</span></td>
+                            <td>Expansion to 10 partners, beginning upgrade to Western partners</td>
+                        </tr>
+                        <tr>
+                            <td>Excellence Phase</td>
+                            <td>2032-2035 (4 years)</td>
+                            <td><span class="badge badge-info">300 million USD</span></td>
+                            <td>Direct twinning with Western partners, full sovereignty</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>10 years</strong></td>
+                            <td><span class="badge badge-success"><strong>1.1 billion USD</strong></span></td>
+                            <td><strong>Global standard educational and health system</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>5.3 Mandatory National Replacement Mechanism</h3>
+            
+            <h4>Table 5.3: National Cadre Replacement Plan</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Replacement Percentage</th>
+                            <th>Number of Replaced Cadres</th>
+                            <th>Positions Replaced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2027</td>
+                            <td><span class="badge badge-info">20%</span></td>
+                            <td><span class="badge badge-info">300</span></td>
+                            <td>Assistant Department Heads</td>
+                        </tr>
+                        <tr>
+                            <td>2028</td>
+                            <td><span class="badge badge-info">40%</span></td>
+                            <td><span class="badge badge-info">600</span></td>
+                            <td>Assistant Department Heads</td>
+                        </tr>
+                        <tr>
+                            <td>2029</td>
+                            <td><span class="badge badge-info">60%</span></td>
+                            <td><span class="badge badge-info">900</span></td>
+                            <td>Main Department Heads</td>
+                        </tr>
+                        <tr>
+                            <td>2030</td>
+                            <td><span class="badge badge-info">80%</span></td>
+                            <td><span class="badge badge-info">1200</span></td>
+                            <td>Deans, Department Directors</td>
+                        </tr>
+                        <tr>
+                            <td>2031</td>
+                            <td><span class="badge badge-success">90%</span></td>
+                            <td><span class="badge badge-success">1500</span></td>
+                            <td>University Presidents, Hospital Directors</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="highlight-box">
+                <p><strong>Renewal Condition:</strong> The contract of any Arab expert is not renewed unless:</p>
+                <ul class="key-points">
+                    <li>They achieve agreed performance indicators</li>
+                    <li>They hand over their duties to a qualified Libyan replacement</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Chapter 6 -->
+        <div class="chapter" id="chapter6">
+            <h2>Chapter 6: Detailed Budget and Funding Sources</h2>
+            
+            <h3>6.1 Adjusted Total Budget (Based on Updated Data)</h3>
+            
+            <div class="highlight-box">
+                <p><strong>Total 10-Year Budget: 2.1 billion USD</strong> (Corrected figure based on original data)</p>
+            </div>
+            
+            <h4>Table 6.1: Temporal Budget Distribution (2.1 Billion USD)</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Arab Experts</th>
+                            <th>Development and Training</th>
+                            <th>Technical Systems</th>
+                            <th>Infrastructure</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026</td>
+                            <td>60 million</td>
+                            <td>20 million</td>
+                            <td>15 million</td>
+                            <td>5 million</td>
+                            <td><span class="badge badge-info">100 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>2027</td>
+                            <td>90 million</td>
+                            <td>30 million</td>
+                            <td>20 million</td>
+                            <td>10 million</td>
+                            <td><span class="badge badge-info">150 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>2028</td>
+                            <td>70 million</td>
+                            <td>15 million</td>
+                            <td>10 million</td>
+                            <td>5 million</td>
+                            <td><span class="badge badge-info">100 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>2029</td>
+                            <td>100 million</td>
+                            <td>40 million</td>
+                            <td>25 million</td>
+                            <td>15 million</td>
+                            <td><span class="badge badge-info">180 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td>2030-2035</td>
+                            <td>370 million</td>
+                            <td>85 million</td>
+                            <td>60 million</td>
+                            <td>55 million</td>
+                            <td><span class="badge badge-info">570 million USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>690 million</strong></td>
+                            <td><strong>190 million</strong></td>
+                            <td><strong>130 million</strong></td>
+                            <td><strong>90 million</strong></td>
+                            <td><span class="badge badge-success"><strong>1.1 billion USD</strong></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="flex-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2.1B</div>
+                    <div class="stat-label">Total Budget (USD)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">48%</div>
+                    <div class="stat-label">Internal Rate of Return</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3.1</div>
+                    <div class="stat-label">Payback Period (Years)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.2</div>
+                    <div class="stat-label">Benefit/Cost Ratio</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chapter 7 -->
+        <div class="chapter" id="chapter7">
+            <h2>Chapter 7: Monitoring, Evaluation, and Quality System</h2>
+            
+            <h3>7.1 Key Performance Indicators (KPIs)</h3>
+            
+            <h4>Table 7.1: Academic Education Indicators</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th>Weight</th>
+                            <th>Target 2028</th>
+                            <th>Target 2031</th>
+                            <th>Target 2035</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Internationally Accredited Programs</td>
+                            <td>25%</td>
+                            <td><span class="badge badge-info">30%</span></td>
+                            <td><span class="badge badge-success">60%</span></td>
+                            <td><span class="badge badge-success">85%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Student Satisfaction</td>
+                            <td>15%</td>
+                            <td><span class="badge badge-info">75%</span></td>
+                            <td><span class="badge badge-success">88%</span></td>
+                            <td><span class="badge badge-success">92%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Research Publication Rate/Professor</td>
+                            <td>20%</td>
+                            <td><span class="badge badge-info">2.5 research</span></td>
+                            <td><span class="badge badge-success">4.8 research</span></td>
+                            <td><span class="badge badge-success">6.2 research</span></td>
+                        </tr>
+                        <tr>
+                            <td>International Student Ratio</td>
+                            <td>10%</td>
+                            <td><span class="badge badge-info">5%</span></td>
+                            <td><span class="badge badge-success">12%</span></td>
+                            <td><span class="badge badge-success">18%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Graduate Employment Rate</td>
+                            <td>15%</td>
+                            <td><span class="badge badge-info">75%</span></td>
+                            <td><span class="badge badge-success">85%</span></td>
+                            <td><span class="badge badge-success">90%</span></td>
+                        </tr>
+                        <tr>
+                            <td>National Replacement Ratio</td>
+                            <td>15%</td>
+                            <td><span class="badge badge-info">50%</span></td>
+                            <td><span class="badge badge-success">90%</span></td>
+                            <td><span class="badge badge-success">95%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Chapter 8 -->
+        <div class="chapter" id="chapter8">
+            <h2>Chapter 8: Organizational Structure and Leadership</h2>
+            
+            <h3>8.1 National Authority for Educational and Medical Renaissance (NATMA)</h3>
+            <p>An independent authority with legal personality, enjoying full financial and administrative independence, and subject to direct supervision from the Prime Minister's Office.</p>
+            
+            <div class="org-structure">
+                <h4>Organizational Structure:</h4>
+                <div class="org-node">Prime Minister's Office</div>
+                <div class="org-node">│</div>
+                <div class="org-node">├── Sovereignty Council (9 members)</div>
+                <div class="org-node">│   ├── Chairman (Prime Minister)</div>
+                <div class="org-node">│   ├── Vice Chairman (Minister of Higher Education)</div>
+                <div class="org-node">│   ├── Member (Minister of Health)</div>
+                <div class="org-node">│   ├── Member (Minister of Finance)</div>
+                <div class="org-node">│   ├── Member (Minister of Planning)</div>
+                <div class="org-node">│   ├── Member (Benghazi Governor)</div>
+                <div class="org-node">│   └── 3 members (International/National independent experts)</div>
+                <div class="org-node">│</div>
+                <div class="org-node">└── Project Commissioner General</div>
+                <div class="org-node">    ├── International Advisory Council (5 experts)</div>
+                <div class="org-node">    ├── National Advisory Council (7 experts)</div>
+                <div class="org-node">    │</div>
+                <div class="org-node">    ├── Deputy Commissioner for Education</div>
+                <div class="org-node">    │   ├── Higher Education Unit</div>
+                <div class="org-node">    │   ├── Scientific Research Unit</div>
+                <div class="org-node">    │   └── Academic Accreditation Unit</div>
+                <div class="org-node">    │</div>
+                <div class="org-node">    ├── Deputy Commissioner for Health</div>
+                <div class="org-node">    │   ├── Medical Services Unit</div>
+                <div class="org-node">    │   ├── Clinical Training Unit</div>
+                <div class="org-node">    │   └── Health Accreditation Unit</div>
+                <div class="org-node">    │</div>
+                <div class="org-node">    ├── Deputy Commissioner for Financial Affairs</div>
+                <div class="org-node">    │   ├── Budget and Planning Unit</div>
+                <div class="org-node">    │   ├── Financial Audit Unit</div>
+                <div class="org-node">    │   └── Partnerships and Funding Unit</div>
+                <div class="org-node">    │</div>
+                <div class="org-node">    ├── Director of International Contracts and Partnerships</div>
+                <div class="org-node">    │   ├── Contracts Management Unit</div>
+                <div class="org-node">    │   ├── Negotiations Unit</div>
+                <div class="org-node">    │   └── Legal Follow-up Unit</div>
+                <div class="org-node">    │</div>
+                <div class="org-node">    └── Director of Technology and Digital Transformation</div>
+                <div class="org-node">        ├── Smart Systems Unit</div>
+                <div class="org-node">        ├── Cybersecurity Unit</div>
+                <div class="org-node">        └── Technical Support Unit</div>
+            </div>
+        </div>
+        
+        <!-- Chapter 9 -->
+        <div class="chapter" id="chapter9">
+            <h2>Chapter 9: Risk Management and Legislation</h2>
+            
+            <h3>9.1 Comprehensive Risk Matrix</h3>
+            
+            <h4>Table 9.1: Main Risk Analysis</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Probability</th>
+                            <th>Impact</th>
+                            <th>Level</th>
+                            <th>Mitigation Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Internal Change Resistance</td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td><span class="badge badge-danger">Critical</span></td>
+                            <td>Awareness program, incentives, participation</td>
+                        </tr>
+                        <tr>
+                            <td>International Partner Withdrawal</td>
+                            <td><span class="badge badge-warning">Medium</span></td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td>Alternative partners, financial penalties</td>
+                        </tr>
+                        <tr>
+                            <td>Funding Shortage</td>
+                            <td><span class="badge badge-warning">Medium</span></td>
+                            <td><span class="badge badge-danger">Very High</span></td>
+                            <td><span class="badge badge-danger">Critical</span></td>
+                            <td>Emergency fund, alternative sources</td>
+                        </tr>
+                        <tr>
+                            <td>Trained Cadre Emigration</td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td><span class="badge badge-danger">High</span></td>
+                            <td>Retention incentives, attractive environment</td>
+                        </tr>
+                        <tr>
+                            <td>Indicator Non-Achievement</td>
+                            <td><span class="badge badge-success">Low</span></td>
+                            <td><span class="badge badge-warning">Medium</span></td>
+                            <td><span class="badge badge-warning">Medium</span></td>
+                            <td>Performance contracts, periodic evaluation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Chapter 10 -->
+        <div class="chapter" id="chapter10">
+            <h2>Chapter 10: Recommendations and Required Sovereign Decisions</h2>
+            
+            <h3>10.1 Required Sovereign Decisions</h3>
+            
+            <h4>Table 10.1: Timeline for Decisions</h4>
+            <div class="table-container scrollable-table">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Decision/Action</th>
+                            <th>Responsible Authority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-2</td>
+                            <td>Final study review</td>
+                            <td>Council of Ministers</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Issuing Decision No. 1 (Approval)</td>
+                            <td>Council of Ministers</td>
+                        </tr>
+                        <tr>
+                            <td>3-4</td>
+                            <td>Issuing Decision No. 2 (NATMA formation)</td>
+                            <td>Prime Minister's Office</td>
+                        </tr>
+                        <tr>
+                            <td>5-6</td>
+                            <td>Appointing Commissioner General and deputies</td>
+                            <td>Sovereignty Council</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Issuing Decision No. 3 (Budget)</td>
+                            <td>Minister of Finance</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Issuing Decisions No. 4 and 5 (Authorities and Protection)</td>
+                            <td>Council of Ministers</td>
+                        </tr>
+                        <tr>
+                            <td>9-12</td>
+                            <td>Launching Foundation Phase</td>
+                            <td>NATMA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Chapter 11 -->
+        <div class="chapter" id="chapter11">
+            <h2>Chapter 11: Advantages of Full Twinning and Comparison with Traditional Partnership</h2>
+            
+            <h3>11.1 Multi-Dimensional Strategic Advantages of Full Twinning</h3>
+            <p>Full Twinning (Franchising) provides unique advantages not available through traditional partnerships, most importantly:</p>
+            
+            <ul class="key-points">
+                <li><strong>Transfer of integrated system not individual experiences:</strong> Complete transfer of institutional identity, organizational culture, administrative and academic systems, ensuring consistency and sustainability.</li>
+                <li><strong>35–45% lower cost:</strong> Compared to direct twinning with Western partner, due to lower operating costs and experts in the Arab region.</li>
+                <li><strong>Higher execution speed:</strong> Cultural, linguistic, and legal proximity reduces negotiation, implementation, and localization time by up to 50%.</li>
+                <li><strong>Ease of gradual national replacement:</strong> Presence of intermediate Arab cadres facilitates knowledge transfer and training of national alternatives more smoothly and effectively.</li>
+                <li><strong>Higher legislative and contractual flexibility:</strong> Avoiding the legal and political complexities accompanying direct contracting with foreign entities.</li>
+                <li><strong>Operational quality guarantee:</strong> Transferred systems would have undergone adaptation and testing in similar Arab environments, increasing their success chances in Libya.</li>
+            </ul>
+        </div>
+        
+        <!-- Chapter 12 -->
+        <div class="chapter" id="chapter12">
+            <h2>Chapter 12: Final Recommendation and List of Heir Universities</h2>
+            
+            <h3>12.1 Final Recommendation: "Qualified Heir" Model is the Smartest for Libya Now</h3>
+            <p>The "Qualified Heir" model is the smartest for Libya now because:</p>
+            
+            <div class="highlight-box">
+                <ul class="key-points">
+                    <li><strong>It solves the trust dilemma:</strong> West trusts its former universities in the Arab World – they are true extensions of their educational and medical systems.</li>
+                    <li><strong>It avoids cultural shock:</strong> Transitioning from Arab to Arab is easier than Arab to Western directly – linguistic and cultural proximity accelerates adoption and acceptance.</li>
+                    <li><strong>It builds a natural bridge:</strong> The Arab heir will facilitate our later access to the Western partner – they speak the same language (literal and metaphorical) with both parties.</li>
+                    <li><strong>It achieves the original goal:</strong> Transferring Western work culture but through an intermediary who understands us – we get Western substance with Arab packaging suitable for our environment.</li>
+                </ul>
+            </div>
+            
+            <h3>12.2 The Golden List: Top 10 Arab "Qualified Heirs"</h3>
+            
+            <div class="highlight-box">
+                <h4>Selection Criteria for "Heir" Universities:</h4>
+                <ul class="key-points">
+                    <li>Long historical partnerships (10+ years) with ranked Western universities</li>
+                    <li>True transfer of institutional culture not just symbolic partnerships</li>
+                    <li>Presence of national cadres trained in the Western system and currently leading it</li>
+                    <li>Real international accreditations not symbolic</li>
+                    <li>Previous twinning experience</li>
+                    <li>Cultural and regional proximity to Libya</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Chapter 13 -->
+        <div class="chapter" id="chapter13">
+            <h2>Chapter 13: The Conclusion and Crucial Equation</h2>
+            
+            <div class="conclusion-box">
+                <h3>The Improved Final Equation</h3>
+                
+                <div class="flex-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2.1B</div>
+                        <div class="stat-label">Required Investment (10 years)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8.8B</div>
+                        <div class="stat-label">Possible Losses (without project)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6.7B</div>
+                        <div class="stat-label">Direct Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+5.78B</div>
+                        <div class="stat-label">Net Additional Returns</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>13.2 Final Vision: Benghazi 2035</h3>
+            <p>After this project's success, Benghazi will be:</p>
+            
+            <ul class="key-points">
+                <li>A regional center for educational excellence with globally ranked universities</li>
+                <li>A leading medical destination with services at global standards</li>
+                <li>A source of qualified global specialists</li>
+                <li>A model for measured and controlled sovereign transformation in the region</li>
+                <li>A locomotive for national development in all of Libya</li>
+            </ul>
+            
+            <h3>13.4 Final Appeal</h3>
+            <div class="highlight-box">
+                <p><strong>Leaders and officials,</strong></p>
+                <p>This project is not a luxury nor an option among options. It is a national salvation project and a historic sovereign decision that will determine Libya's future for generations to come.</p>
+            </div>
+            
+            <h4>Time is not on our side:</h4>
+            <div class="flex-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2.41M</div>
+                    <div class="stat-label">USD lost per day of delay</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">72.3M</div>
+                    <div class="stat-label">USD lost per month of delay</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">880M</div>
+                    <div class="stat-label">USD + 500 minds lost per year</div>
+                </div>
+            </div>
+            
+            <h3>13.5 Closing Message</h3>
+            <div class="highlight-box">
+                <p><em>"This project is not a 'development program'... this is a national salvation project."</em></p>
+                <p><em>"The decision is in your hands today... the future is in the hands of generations tomorrow."</em></p>
+                <p><em>"Benghazi deserves it... Libya deserves it... Future generations deserve it."</em></p>
+            </div>
+        </div>
+        
+        <!-- Final Document Footer -->
+        <div class="conclusion-box">
+            <h3>End of Complete Strategic Study – Updated</h3>
+            <p><strong>National Program for Educational and Medical Renaissance</strong></p>
+            <p><strong>Benghazi Project for Academic and Health Excellence 2026-2031</strong></p>
+            <p><strong>Sovereign Strategic Document – Final Organized Version</strong></p>
+            
+            <div class="meta-info" style="margin-top: 20px;">
+                <div class="meta-item"><strong>Author:</strong> Mutaz Aljayar</div>
+                <div class="meta-item"><strong>Date of Issue:</strong> November 2025</div>
+                <div class="meta-item"><strong>Document Status:</strong> Ready for Immediate Approval and Implementation</div>
+                <div class="meta-item"><strong>Number of Pages:</strong> 220 pages (without appendices)</div>
+                <div class="meta-item"><strong>Attached Appendices:</strong> 18 appendices (1200+ pages)</div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem;">© All Rights Reserved – National Program for Educational and Medical Renaissance</p>
+        </div>
+    </main>
+    
+    <footer class="container">
+        <p>This document is a complete translation of the original study prepared by Mutaz Aljayar.</p> : https://www.facebook.com/share/17xyexFYhz/
+          .</p>
+        <p>All content, data, and figures are preserved exactly as in the original document.</p>
+        <p>Designed as an interactive HTML presentation for review and implementation purposes.</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effect to table rows
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableRows = document.querySelectorAll('table tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add scroll indicator for wide tables
+            const tableContainers = document.querySelectorAll('.scrollable-table');
+            tableContainers.forEach(container => {
+                if(container.scrollWidth > container.clientWidth) {
+                    container.style.border = '2px solid var(--border-color)';
+                }
+            });
+        });
+    </script>
+</body>
+                              </html>
